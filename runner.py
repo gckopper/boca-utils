@@ -149,6 +149,7 @@ def main():
         "-p",
         "--program",
         help="The main source file of your program",
+        required=True
     )
     parser.add_argument(
         "-V",
@@ -161,14 +162,7 @@ def main():
     )
     try:
         args = parser.parse_args()
-    except FileNotFoundError:
-        print("File not found!")
-        exit(2)
-    except PermissionError:
-        print("Permission denied!")
-        exit(3)
     except:
-        print("Unknown error ¯\_(ツ)_/¯")
         exit(69)
     filename: str = args.program
     _, ext = splitext(filename)
