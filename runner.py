@@ -97,7 +97,7 @@ class C(Program):
             print(result.stdout)
             print(result.stderr)
             exit(4)
-        self.cmd = [file + ".exe"]
+        self.cmd = ["./" + file + ".exe"]
 
 class Cpp(Program):
     def compile(self):
@@ -112,7 +112,7 @@ class Cpp(Program):
             print(result.stdout)
             print(result.stderr)
             exit(4)
-        self.cmd = [file + ".exe"]
+        self.cmd = ["./" + file + ".exe"]
 
 class Python(Program):
     def compile(self):
