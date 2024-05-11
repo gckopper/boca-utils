@@ -104,7 +104,7 @@ class Cpp(Program):
         file, ext = splitext(self.source)
         if os() == "Windows":
             result = subprocess.run(
-                ["g++", "-o", file + ".exe", self.source])
+                ["g++", "-Wl,--stack,8388608", "-o", file + ".exe", self.source])
         else:
             result = subprocess.run(
                 ["g++", "-O2", "-lm", "-o", file + ".exe", self.source])
