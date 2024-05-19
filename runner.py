@@ -53,8 +53,8 @@ class Program:
                 subTime = time_ns() - startTime
                 totalTime += subTime
             with open(output_file, "rb") as expected_file:
-                expected = expected_file.read()
-                actual = result.stdout.replace(b"\r", b"")  # Fuck windows
+                expected = expected_file.read().replace(b"\r", b"")  # Fuck windows
+                actual = result.stdout.replace(b"\r", b"")  # Fuck windows again
                 if expected == actual:
                     passed += 1
                     if self.verbosity >= 2:
